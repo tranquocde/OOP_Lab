@@ -52,5 +52,6 @@ public class SolProb4 {
                 System.out.println("There are 28 days in this month");
             }
             }
+        System.exit(0);
         }
 }
