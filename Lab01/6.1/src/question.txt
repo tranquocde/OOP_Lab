@@ -1,0 +1,9 @@
+Questions:
+- What happens if users choose "Cancel" ?
+Answer : The system will pop up : " You've chosen No"
+- How to optimize the options to users
+Answer :         
+JOptionPane.showMessageDialog(null,"You've choosen: " + 
+(option==JOptionPane.YES_NO_OPTION?"I do":"I do not"));
+
+
