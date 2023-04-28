@@ -3,6 +3,10 @@ public class Cart {
     public static final int MAX_NUMBERS_ORDERED = 20;
     private DigitalVideoDisc itemsOrdered[] = new DigitalVideoDisc[MAX_NUMBERS_ORDERED];
     private int qtyOrdered;
+    
+    public int getQtyOrdered() {
+        return qtyOrdered;
+    }
     public void addDigitalVideoDisc(DigitalVideoDisc disc){
         if (this.qtyOrdered == MAX_NUMBERS_ORDERED){
             System.out.println("Sorry, your cart is full");
@@ -23,13 +27,14 @@ public class Cart {
             System.out.println("Your cart is empty");;
         }
         else{
-            int i,j;
-            for(i=0,j=0;j<MAX_NUMBERS_ORDERED;j++)
-                if (!this.itemsOrdered[j].equals(disc)){
-                    this.itemsOrdered[i++] = this.itemsOrdered[j];
+            int i;
+            for (i=0;i<MAX_NUMBERS_ORDERED;i++){
+                if (this.itemsOrdered[i].equals(disc)){
+                    this.itemsOrdered[i] = null;
+                    this.qtyOrdered -= 1;
+                    break;
                 }
-            this.itemsOrdered = Arrays.copyOf(this.itemsOrdered, i);
-            this.qtyOrdered -= 1;
+            }
         }
     }
     public float totalCost(){
