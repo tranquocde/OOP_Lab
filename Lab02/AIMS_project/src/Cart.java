@@ -48,12 +48,20 @@ public class Cart {
         }
         return res;
     }
+    public boolean checkremove(){
+        int oldqty = this.qtyOrdered;
+        DigitalVideoDisc disc1 = new DigitalVideoDisc(20);
+        this.addDigitalVideoDisc(disc1);
+        int newqty = this.qtyOrdered;
+        return (newqty - oldqty == 1);
+    }
 
     public static void main(String[] args){
         DigitalVideoDisc item1 = new DigitalVideoDisc(35);
         Cart cart = new Cart();
         cart.addDigitalVideoDisc(item1);
         System.out.println(cart.totalCost());
+        System.out.println(cart.checkremove());
 
     }
 

@@ -59,8 +59,5 @@ public class DigitalVideoDisc {
     public DigitalVideoDisc(float cost) {
         this.cost = cost;
     }
-    public static void main(String[] args){
-        
-    }
-    
+
 }
