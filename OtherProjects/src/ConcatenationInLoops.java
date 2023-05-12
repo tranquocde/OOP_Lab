@@ -19,4 +19,5 @@ public class ConcatenationInLoops {
         System.out.println(System.currentTimeMillis() - start); // This prints 5.
     }
 
+    
 }
