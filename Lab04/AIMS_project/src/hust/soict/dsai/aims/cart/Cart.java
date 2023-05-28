@@ -39,7 +39,7 @@ public class Cart {
     }
     public Media searchByTitle(String title){
         for (Media media: itemsOrdered){
-            if (media.getTitle() == title){
+            if (media.getTitle().equals(title)){
                 return media;
             }
         }

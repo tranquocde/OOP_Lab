@@ -119,6 +119,7 @@ public class Aims {
 			selectInMenu();
 			break;}
 		}
+		
 	}
 	
 	public static void selectInStoreMenu() {
@@ -252,8 +253,13 @@ public class Aims {
 				if (x!=null){
 					cart.removeMedia(x);
 					store.addMedia(x);
+					selectInMenu();
 				}
-				else {System.out.println("The media is not on the cart");}
+				else {
+					System.out.println("The media is not on the cart");
+					selectInCartMenu();
+				}
+
 				break;
 			}
 			case 4: { //play
