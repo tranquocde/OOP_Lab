@@ -8,7 +8,21 @@ public class CompactDisc extends Disc implements Playable {
     public String getArtist() {
         return artist;
     }
+
     public CompactDisc(){super();}
+    public CompactDisc(int id, String title, String category, float cost, String director, int length) {
+        this.setId(id);
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+        this.setDirector(director);
+        this.setLength(length);
+    }
+
+    public CompactDisc(String title) {
+        this.setTitle(title);
+    }
+
     public boolean addTrack(Track track){
         for (Track name: tracks){
             if (track.equals(name)){
@@ -36,7 +50,7 @@ public class CompactDisc extends Disc implements Playable {
         return res;
     }
     public String toString(){
-        return String.format("Artist : %s, Category: %s, Director: %s, Cost: %f, Length: %d", this.getArtist(),this.getCategory(),
+        return String.format("Class: %s,Id: %d,Title: %s, Artist : %s, Category: %s, Director: %s, Cost: %f, Length: %d",this.getClass(),this.getId(),this.getTitle(), this.getArtist(),this.getCategory(),
         this.getDirector(),this.getCost(),this.getLength());
     }
     public void play(){
@@ -44,8 +58,8 @@ public class CompactDisc extends Disc implements Playable {
             track.play();
         }
     }
-    public static void main(String[] args){
-        CompactDisc cd = new CompactDisc();
-        cd.play();
+
+    public void setArtist(String artist2) {
+        this.artist = artist2;
     }
 }

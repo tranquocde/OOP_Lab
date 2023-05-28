@@ -4,6 +4,15 @@ import java.util.List;
 public class Book extends Media {
     private List<String> authors= new ArrayList<String>();
     public Book(){};
+    public Book(int id, String title, String category, float cost) {
+        this.setId(id);
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+    }
+    public Book(String title) {
+        this.setTitle(title);
+    }
     public boolean addAuthor(String author){
         for (String name:authors){
             if (author.equals(name)){
@@ -24,7 +33,7 @@ public class Book extends Media {
         return false;
     }
     public String toString(){
-        return String.format("Title: %s, Category: %s, Cost: %f",
-        this.getTitle(), this.getCategory(),this.getCost());
+        return String.format("Class: %s,  Title: %s,   Category: %s,   Cost: %f",
+        this.getClass(),this.getTitle(), this.getCategory(),this.getCost());
     }
 }

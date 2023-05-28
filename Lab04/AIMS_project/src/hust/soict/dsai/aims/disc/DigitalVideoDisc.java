@@ -18,7 +18,7 @@ public class DigitalVideoDisc extends Disc implements Playable{
         return length;
     }
     public String toString(){
-        return String.format("%s %s , %s , %s , %d , %f",this.getId(), this.getTitle(),
+        return String.format("Class: %s,ID: %s, Title: %s , Category %s , Director: %s ,Length %d ,Cost %f",this.getClass(),this.getId(), this.getTitle(),
         this.getCategory(),this.getDirector(),this.getLength(),this.getCost());
     }
 
@@ -57,6 +57,15 @@ public class DigitalVideoDisc extends Disc implements Playable{
         this.setCost(cost);
         nbDigitalVideoDiscs +=1;
         this.setId(nbDigitalVideoDiscs);
+
+    }
+    public DigitalVideoDisc(int id, String title, String category, float cost, String director2, int length2) {
+        this.setId(id);
+        this.setTitle(title);
+        this.setCategory(category);
+        this.setCost(cost);
+        this.director = director2;
+        this.length = length2;
 
     }
     public void play(){
