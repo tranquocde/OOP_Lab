@@ -3,8 +3,8 @@ package hust.soict.dsai.aims.media;
 import java.util.ArrayList;
 
 public class CompactDisc extends Disc implements Playable {
-    private String artist;
-    private ArrayList<Track> tracks;
+    private String artist = "";
+    private ArrayList<Track> tracks = new ArrayList<Track>();
     public String getArtist() {
         return artist;
     }
@@ -35,9 +35,17 @@ public class CompactDisc extends Disc implements Playable {
         }
         return res;
     }
+    public String toString(){
+        return String.format("Artist : %s, Category: %s, Director: %s, Cost: %f, Length: %d", this.getArtist(),this.getCategory(),
+        this.getDirector(),this.getCost(),this.getLength());
+    }
     public void play(){
         for (Track track:tracks){
             track.play();
         }
+    }
+    public static void main(String[] args){
+        CompactDisc cd = new CompactDisc();
+        cd.play();
     }
 }

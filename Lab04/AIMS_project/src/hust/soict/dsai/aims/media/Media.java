@@ -2,10 +2,10 @@ package hust.soict.dsai.aims.media;
 
 public abstract class Media {
     public Media(){super();};
-    private int id;
-    private String title;
-    private String category;
-    private float cost;
+    private int id = 0;
+    private String title = "";
+    private String category = "";
+    private float cost = 0;
     public int getId() {
         return id;
     }
@@ -29,6 +29,9 @@ public abstract class Media {
     }
     public void setCost(float cost) {
         this.cost = cost;
+    }
+    public boolean equals(Media medium){
+        return  this.getTitle() ==  medium.getTitle();
     }
     
 }

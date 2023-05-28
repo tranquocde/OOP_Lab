@@ -6,8 +6,8 @@ import hust.soict.dsai.aims.media.Playable;
 public class DigitalVideoDisc extends Disc implements Playable{
 
 
-    private String director;
-    private int length;
+    private String director = "";
+    private int length = 0;
     private static int nbDigitalVideoDiscs = 0;
 
 
@@ -32,6 +32,8 @@ public class DigitalVideoDisc extends Disc implements Playable{
 
     }
     
+    public DigitalVideoDisc() {
+    }
     public DigitalVideoDisc(String title, String category, float cost) {
         this.setTitle(title);
         this.setCategory(category);

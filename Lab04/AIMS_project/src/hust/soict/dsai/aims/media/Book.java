@@ -23,4 +23,8 @@ public class Book extends Media {
         }
         return false;
     }
+    public String toString(){
+        return String.format("Title: %s, Category: %s, Cost: %f",
+        this.getTitle(), this.getCategory(),this.getCost());
+    }
 }
