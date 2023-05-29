@@ -117,10 +117,6 @@ public class Aims {
 				selectInCartMenu();
 				break;
 			}
-			// default:
-			// {System.out.println("The selection is invalid!");
-			// selectInMenu();
-			// break;}
 		}
 
 	}
@@ -203,7 +199,9 @@ public class Aims {
 			if (flag){
 				System.out.println(String.format("Number of medias: %d", cart.getItemsOrdered().size()));
 			}
-			break;}
+			selectInStoreMenu();
+			break;
+			}
 			case 2: // play
 			{if(x instanceof DigitalVideoDisc) {
 				DigitalVideoDisc x_dvd = (DigitalVideoDisc)x;
@@ -213,7 +211,9 @@ public class Aims {
 				CompactDisc x_cd = (CompactDisc)x;
 				x_cd.play();
 			}
-			else System.out.println("Book cannot play! Try again!"); selectInStoreMenu();
+			else 
+				{System.out.println("Book cannot play! Try again!");}
+			selectInStoreMenu();
 			break;
 			}
 			default:{
