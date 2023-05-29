@@ -64,7 +64,10 @@ public class Aims {
 		Aims.showMenu();
 		int selection = Integer.valueOf(System.console().readLine());
 		switch(selection) {
-			case 0: {break;}
+			case 0: {
+				System.out.println("Thank you, see you again!");
+				System.exit(0);
+				break;}
 			case 1: // display all the items in the store and goto storeMenu
 			{	
 				store.available();
@@ -114,12 +117,12 @@ public class Aims {
 				selectInCartMenu();
 				break;
 			}
-			default:
-			{System.out.println("The selection is invalid!");
-			selectInMenu();
-			break;}
+			// default:
+			// {System.out.println("The selection is invalid!");
+			// selectInMenu();
+			// break;}
 		}
-		
+
 	}
 	
 	public static void selectInStoreMenu() {
@@ -238,12 +241,15 @@ public class Aims {
 			case 2:{ // sort
 				System.out.println("Enter choice: cost or title ?:");
 				String choice = System.console().readLine();
-				if (choice=="cost"){
+				if (choice.equals("cost")){
 					cart.sortCost();
+					System.out.println("Successfully sort by cost");
 				}
-				else if (choice == "title"){
+				else if (choice.equals("title")){
 					cart.sortTitle();
+					System.out.println("Successfully sort by title");
 				}	
+				selectInCartMenu();
 				break;
 			}
 			case 3: { //remove 
@@ -280,21 +286,21 @@ public class Aims {
 				else{
 					System.out.println("Your media is not on the store");
 				}
+				selectInCartMenu();
 				break;
 			}
 			case 5: { //place order and empty current cart
 				System.out.println("An order is created");
 				cart.emptyCart();
+				selectInMenu();
 				break;
 			}
-			default : {System.out.println("Invalid!");}
 		}
 	}
 	public static void main(String[] args) {
 
 		selectInMenu();
-		cart.displayCart();
-		store.available();
+
 		
 	}
 }
