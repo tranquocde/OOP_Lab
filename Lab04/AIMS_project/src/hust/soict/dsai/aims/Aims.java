@@ -1,9 +1,6 @@
 package hust.soict.dsai.aims;
 
 
-import java.util.ArrayList;
-import java.util.stream.Collectors;
-
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Book;
@@ -13,8 +10,8 @@ import hust.soict.dsai.aims.media.Media;
 import hust.soict.dsai.aims.store.Store;
 
 public class Aims {
-	private static Cart cart = new Cart();
-	private static Store store = new Store();
+	private  Cart cart = new Cart();
+	private  Store store = new Store();
 
 	public static void showMenu() {
 		System.out.println("------AIMS-------: ");
@@ -62,7 +59,7 @@ public class Aims {
 		System.out.println("--------------------------------");
 		System.out.println("Please choose a number: 0-1-2-3-4-5");
 	}
-	public static void selectInMenu() {
+	public  void selectInMenu() {
 		
 		Aims.showMenu();
 		int selection = Integer.valueOf(System.console().readLine());
@@ -124,7 +121,7 @@ public class Aims {
 
 	}
 	
-	public static void selectInStoreMenu() {
+	public void selectInStoreMenu() {
 		
 		
 		Aims.storeMenu();
@@ -192,11 +189,11 @@ public class Aims {
 		
 	}
 	
-	public static void selectInMediaDetailsMenu(Media x) {
+	public void selectInMediaDetailsMenu(Media x) {
 		Aims.mediaDetailsMenu();
 		int selection = Integer.valueOf(System.console().readLine());
 		switch(selection) {
-			case 0: Aims.selectInStoreMenu(); break; //back
+			case 0: selectInStoreMenu(); break; //back
 			case 1: //add to cart
 			{boolean flag = cart.addMedia(x);
 			if (flag){
@@ -227,7 +224,7 @@ public class Aims {
 		}
 	}
 	
-	public static void selectInCartMenu() {
+	public  void selectInCartMenu() {
 		int select;
 		
 		Aims.cartMenu();
@@ -321,8 +318,9 @@ public class Aims {
 		}
 	}
 	public static void main(String[] args) {
+		Aims aims = new Aims();
 
-		selectInMenu();
+		aims.selectInMenu();
 
 		
 	}
