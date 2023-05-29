@@ -12,6 +12,14 @@ import hust.soict.dsai.aims.store.Store;
 public class Aims {
 	private  Cart cart = new Cart();
 	private  Store store = new Store();
+	
+	public Aims(Cart cart, Store store) {
+		this.cart = cart;
+		this.store = store;
+	}
+	
+	public Aims() {
+	}
 
 	public static void showMenu() {
 		System.out.println("------AIMS-------: ");
@@ -318,7 +326,13 @@ public class Aims {
 		}
 	}
 	public static void main(String[] args) {
-		Aims aims = new Aims();
+		Book book1 = new Book("messi");
+		Book book2 = new Book("ansu");
+		Cart cart = new Cart();
+		Store store = new Store();
+		store.addMedia(book1);
+		store.addMedia(book2);
+		Aims aims = new Aims(cart,store);
 
 		aims.selectInMenu();
 
