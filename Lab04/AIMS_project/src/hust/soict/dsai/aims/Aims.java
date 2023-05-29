@@ -299,7 +299,7 @@ public class Aims {
 			case 4: { //play
 				System.out.println("Title of media:");
 				String title = System.console().readLine();
-				Media x = store.searchByTitle(title);
+				Media x = cart.searchByTitle(title);
 				if (x != null){
 					if(x instanceof DigitalVideoDisc) {
 						DigitalVideoDisc x_dvd = (DigitalVideoDisc)x;
@@ -312,7 +312,7 @@ public class Aims {
 					else System.out.println("Book cannot play!");
 				}
 				else{
-					System.out.println("Your media is not on the store");
+					System.out.println("Your media is not on the cart");
 				}
 				selectInCartMenu();
 				break;
