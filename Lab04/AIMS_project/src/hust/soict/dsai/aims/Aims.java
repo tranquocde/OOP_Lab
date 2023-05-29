@@ -1,6 +1,9 @@
 package hust.soict.dsai.aims;
 
 
+import java.util.ArrayList;
+import java.util.stream.Collectors;
+
 import hust.soict.dsai.aims.cart.Cart;
 import hust.soict.dsai.aims.disc.DigitalVideoDisc;
 import hust.soict.dsai.aims.media.Book;
@@ -235,7 +238,27 @@ public class Aims {
 				break;
 			}
 			case 1:{ //filter , not finish
-				System.out.println("");
+				System.out.println("Enter choice: cost or title ? :");
+				String choice = System.console().readLine();
+				if (choice.equals("title")){
+					System.out.println("Enter the title:");
+					String title = System.console().readLine();
+					for (Media media:cart.getItemsOrdered()){
+						if (media.getTitle().equals(title)){
+							System.out.println(media.toString());
+						}
+					}
+				}
+				else {
+					System.out.println("Enter the cost:");
+					float cost = Float.parseFloat(System.console().readLine());
+					for (Media media: cart.getItemsOrdered()){
+						if (media.getCost()==cost){
+							System.out.println(media.toString());
+						}
+					}
+				}
+				selectInCartMenu();
 				break;
 			}
 			case 2:{ // sort
